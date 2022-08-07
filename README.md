@@ -1,4 +1,4 @@
-lDOWNLOAD ghdl,micropython,microwatt and powerpc64le-power8(from Anton Blanchard github page)
+DOWNLOAD ghdl,micropython,microwatt and powerpc64le-power8(from Anton Blanchard github page)
 
 mkdir /home/$USER/uwatt
 cd ../
@@ -17,7 +17,7 @@ git clone https://github.com/antonblanchard/microwatt
 
 You will get all folders in uwatt folder.
 
-Set path powerpcle64
+Set path for powerpcle64
 
 export PATH=$PATH:/home/$USER/uwatt/powerpc64le-power8--glibc--stable-2021.11-1/bin
 export CROSS_COMPILE=powerpc64le-linux-
@@ -38,6 +38,8 @@ sudo dpkg -i ./gnat-4.9-base_4.9.3-3ubuntu5_amd64.deb
 sudo dpkg -i ./libgnat-4.9_4.9.3-3ubuntu5_amd64.deb
 
 
+Clean install ghdl for proper working of uwatt make.
+
 cd ghdl
 mkdir -p /home/$USER/uwatt/ghdl_build
 mkdir build && cd build
@@ -46,13 +48,16 @@ make
 make install
 cd ../../
 
+export PATH=$PATH:/home/$USER/uwatt/ghdl_build/bin
+
 cd microwatt
 make
 
 
 
+
+
 CHECK FOR REFERENCE
 https://asciinema.org/a/364414
-
 
 
